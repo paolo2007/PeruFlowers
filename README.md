@@ -1,97 +1,185 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# PeruFlowers
 
-# Getting Started
+## 1. Descripción del proyecto
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+**PeruFlowers** es una aplicación móvil desarrollada con React Native y TypeScript para gestionar los pedidos de una floristería.
 
-## Step 1: Start Metro
+Su finalidad es facilitar el registro, consulta, actualización y eliminación de pedidos, permitiendo organizar la información de los clientes y realizar un seguimiento del estado de cada pedido.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 2. Core de negocio elegido
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+El core de negocio seleccionado es la **gestión de pedidos de una floristería**.
 
-```sh
-# Using npm
-npm start
+La aplicación permite:
 
-# OR using Yarn
-yarn start
+- Registrar pedidos de arreglos florales.
+- Visualizar el listado de pedidos.
+- Consultar los detalles de cada pedido.
+- Editar la información de los pedidos.
+- Actualizar cantidades y precios.
+- Calcular el importe total.
+- Cambiar el estado de los pedidos.
+- Eliminar pedidos con confirmación.
+- Buscar y filtrar pedidos.
+
+## 3. Tecnologías utilizadas
+
+- React Native.
+- TypeScript.
+- JavaScript.
+- React Navigation.
+- SQLite para persistencia local.
+- Node.js.
+- Java JDK.
+- Android Studio.
+- Visual Studio Code.
+
+## 4. Requisitos
+
+Para instalar y ejecutar el proyecto se necesita:
+
+- Node.js 20 o superior.
+- JDK 17.
+- Android Studio y Android SDK para Android.
+- Xcode y macOS para iOS.
+- Visual Studio Code (recomendado).
+
+## 5. Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/paolo2007/PeruFlowers.git
 ```
 
-## Step 2: Build and run your app
+Ingresar a la carpeta:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+cd PeruFlowers
+```
+
+Instalar las dependencias:
+
+```bash
+npm install
+```
+
+## 6. Ejecución del proyecto
 
 ### Android
 
-```sh
-# Using npm
-npm run android
+Conectar un dispositivo Android con la depuración USB habilitada o iniciar un emulador.
 
-# OR using Yarn
-yarn android
+Ejecutar:
+
+```bash
+npx react-native run-android
 ```
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+En macOS, instalar las dependencias:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+cd ios
+pod install
+cd ..
 ```
 
-Then, and every time you update your native dependencies, run:
+Ejecutar:
 
-```sh
-bundle exec pod install
+```bash
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 7. Prueba del flujo CRUD
 
-```sh
-# Using npm
-npm run ios
+### Crear (Create)
+1. Ingresar a la aplicación.
+2. Acceder al formulario de pedidos.
+3. Completar los datos del cliente y del pedido.
+4. Guardar el pedido.
+5. Verificar que aparezca en el listado.
 
-# OR using Yarn
-yarn ios
+### Leer (Read)
+1. Ingresar al listado de pedidos.
+2. Seleccionar un pedido.
+3. Consultar su información y detalles.
+
+### Actualizar (Update)
+1. Seleccionar un pedido existente.
+2. Acceder a la opción de edición.
+3. Modificar los datos.
+4. Guardar los cambios.
+5. Verificar la actualización.
+
+### Eliminar (Delete)
+1. Seleccionar un pedido.
+2. Presionar la opción de eliminar.
+3. Confirmar la eliminación.
+4. Verificar que desaparezca del listado.
+
+## 8. Arquitectura del proyecto
+
+El proyecto utiliza una arquitectura modular organizada por responsabilidades:
+
+- **Screens:** contienen las pantallas de la aplicación.
+- **Components:** contienen componentes reutilizables.
+- **Context:** administra y comparte el estado de los pedidos.
+- **Reducers:** centralizan las operaciones de actualización del estado.
+- **Services:** gestionan la persistencia local de la información.
+- **Types:** definen las estructuras y tipos de datos.
+
+Esta organización facilita el mantenimiento y la reutilización del código.
+
+## 9. Estructura del proyecto
+
+```text
+PeruFlowers/
+│
+├── android/
+├── ios/
+├── src/
+│   ├── components/
+│   │   ├── OrderCard.tsx
+│   │   └── StatusBadge.tsx
+│   │
+│   ├── context/
+│   │   └── OrderContext.tsx
+│   │
+│   ├── reducers/
+│   │   └── OrderReducer.ts
+│   │
+│   ├── screens/
+│   │   ├── LoginScreen.tsx
+│   │   ├── OrdersScreen.tsx
+│   │   ├── OrderFormScreen.tsx
+│   │   ├── OrderDetailScreen.tsx
+│   │   └── ProfileScreen.tsx
+│   │
+│   ├── services/
+│   │   └── database.ts
+│   │
+│   └── types/
+│       └── Order.ts
+│
+├── App.tsx
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 10. Integrantes del grupo
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+1. Sebastián Paolo Paredes Bueno
+2. Susaya Cárdenas Vanessa
+3. Cristhian Ángel Meza Cárdenas
+4. Mori Sánchez, Roberto
 
-## Step 3: Modify your app
+## 11. Repositorio GitHub
 
-Now that you have successfully run the app, let's make changes!
+[https://github.com/paolo2007/PeruFlowers](https://github.com/paolo2007/PeruFlowers)
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**PeruFlowers — Flores con amor.**
